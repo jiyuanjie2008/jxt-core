@@ -3,7 +3,7 @@ module github.com/jiyuanjie2008/jxt-core/plugins/logger/zap
 go 1.21  
 
 require (  
-	github.com/jiyuanjie2008/jxt-core v1.5.5
+	github.com/jiyuanjie2008/jxt-core v1.5.6
 	go.uber.org/zap v1.26.0  
 )  
 
