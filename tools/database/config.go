@@ -16,7 +16,7 @@ type DBConfig struct {
 	registers       []ResolverConfigure
 }
 
-// NewConfigure 初始化 Configure
+// NewConfigure 初始�?Configure
 func NewConfigure(
 	dsn string,
 	maxIdleConns,
@@ -34,7 +34,7 @@ func NewConfigure(
 	}
 }
 
-// Init 获取db，⚠️注意：读写分离只能配置一组
+// Init 获取db，⚠️注意：读写分离只能配置一�?
 func (e *DBConfig) Init(config *gorm.Config, open func(string) gorm.Dialector) (*gorm.DB, error) {
 	db, err := gorm.Open(open(e.dsn), config)
 	if err != nil {
@@ -72,7 +72,7 @@ type DBResolverConfig struct {
 	tables   []interface{}
 }
 
-// NewResolverConfigure 初始化 ResolverConfigure
+// NewResolverConfigure 初始�?ResolverConfigure
 func NewResolverConfigure(sources, replicas []string, policy string, tables []string) ResolverConfigure {
 	data := make([]interface{}, len(tables))
 	for i := range tables {

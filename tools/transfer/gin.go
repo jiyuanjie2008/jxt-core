@@ -13,7 +13,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/go-admin-team/go-admin-core/transfer"
+	"github.com/jiyuanjie2008/jxt-core/transfer"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
@@ -24,7 +24,7 @@ func main() {
 }
 **/
 
-// Handler http.Handler 转换成 gin.HandlerFunc
+// Handler http.Handler 转换�?gin.HandlerFunc
 func Handler(handler http.Handler) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		handler.ServeHTTP(c.Writer, c.Request)

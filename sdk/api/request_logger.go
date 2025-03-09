@@ -5,9 +5,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/go-admin-team/go-admin-core/logger"
-	"github.com/go-admin-team/go-admin-core/sdk"
-	"github.com/go-admin-team/go-admin-core/sdk/pkg"
+	"github.com/jiyuanjie2008/jxt-core/logger"
+	"github.com/jiyuanjie2008/jxt-core/sdk"
+	"github.com/jiyuanjie2008/jxt-core/sdk/pkg"
 )
 
 type loggerKey struct{}
@@ -31,7 +31,7 @@ func GetRequestLogger(c *gin.Context) *logger.Helper {
 	return log
 }
 
-// SetRequestLogger 设置logger中间件
+// SetRequestLogger 设置logger中间�?
 func SetRequestLogger(c *gin.Context) {
 	requestId := pkg.GenerateMsgIDFromContext(c)
 	log := logger.NewHelper(sdk.Runtime.GetLogger()).WithFields(map[string]interface{}{

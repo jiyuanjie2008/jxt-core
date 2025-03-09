@@ -1,8 +1,8 @@
 package runtime
 
-import "github.com/go-admin-team/go-admin-core/storage"
+import "github.com/jiyuanjie2008/jxt-core/storage"
 
-// NewQueue 创建对应上下文队列
+// NewQueue 创建对应上下文队�?
 func NewQueue(prefix string, queue storage.AdapterQueue) storage.AdapterQueue {
 	return &Queue{
 		prefix: prefix,
@@ -19,12 +19,12 @@ func (e *Queue) String() string {
 	return e.queue.String()
 }
 
-// Register 注册消费者
+// Register 注册消费�?
 func (e *Queue) Register(name string, f storage.ConsumerFunc) {
 	e.queue.Register(name, f)
 }
 
-// Append 增加数据到生产者
+// Append 增加数据到生产�?
 func (e *Queue) Append(message storage.Messager) error {
 	values := message.GetValues()
 	if values == nil {

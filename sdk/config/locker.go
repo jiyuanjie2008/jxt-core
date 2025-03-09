@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/go-admin-team/go-admin-core/storage"
-	"github.com/go-admin-team/go-admin-core/storage/locker"
+	"github.com/jiyuanjie2008/jxt-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/storage/locker"
 	"github.com/redis/go-redis/v9"
 )
 
@@ -12,7 +12,7 @@ type Locker struct {
 	Redis *RedisConnectOptions
 }
 
-// Empty 空设置
+// Empty 空设�?
 func (e Locker) Empty() bool {
 	return e.Redis == nil
 }

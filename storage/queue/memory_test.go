@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-admin-team/go-admin-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/storage"
 )
 
 func TestMemory_Append(t *testing.T) {

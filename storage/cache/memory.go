@@ -53,7 +53,7 @@ func (m *Memory) getItem(key string) (*item, error) {
 		if item.Expired.Before(time.Now()) {
 			//过期
 			_ = m.del(key)
-			//过期后删除
+			//过期后删�?
 			return nil, nil
 		}
 		return item, nil

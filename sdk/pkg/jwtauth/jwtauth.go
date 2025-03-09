@@ -72,10 +72,10 @@ type GinJWTMiddleware struct {
 	// Set the identity handler function
 	IdentityHandler func(*gin.Context) interface{}
 
-	// 关键字段，用于存储用户信息
+	// 关键字段，用于存储用户信�?
 	// Set the identity key
 	IdentityKey string
-	// 用户名
+	// 用户�?
 	NiceKey string
 	// 数据权限类型
 	DataScopeKey string
@@ -187,7 +187,7 @@ var (
 	// ErrInvalidSigningAlgorithm indicates signing algorithm is invalid, needs to be HS256, HS384, HS512, RS256, RS384 or RS512
 	ErrInvalidSigningAlgorithm = errors.New("invalid signing algorithm")
 
-	ErrInvalidVerificationode = errors.New("验证码错误")
+	ErrInvalidVerificationode = errors.New("验证码错�?)
 
 	// ErrNoPrivKeyFile indicates that the given private key is unreadable
 	ErrNoPrivKeyFile = errors.New("private key file unreadable")

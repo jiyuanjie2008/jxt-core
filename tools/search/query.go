@@ -9,9 +9,9 @@ import (
 const (
 	// FromQueryTag tag标记
 	FromQueryTag = "search"
-	// Mysql 数据库标识
+	// Mysql 数据库标�?
 	Mysql = "mysql"
-	// Postgres 数据库标识
+	// Postgres 数据库标�?
 	Postgres = "postgres"
 )
 
@@ -21,8 +21,8 @@ const (
  * 	contains / icontains 包含
  *	gt / gte 大于 / 大于等于
  *	lt / lte 小于 / 小于等于
- *	startswith / istartswith 以…起始
- *	endswith / iendswith 以…结束
+ *	startswith / istartswith 以…起�?
+ *	endswith / iendswith 以…结�?
  *	in
  *	isnull
  *  order 排序		e.g. order[key]=desc     order[key]=asc
@@ -67,7 +67,7 @@ func ResolveSearchQuery(driver string, q interface{}, condition Condition) {
 func pgSql(driver string, t *resolveSearchTag, condition Condition, qValue reflect.Value, i int) {
 	switch t.Type {
 	case "left":
-		//左关联
+		//左关�?
 		join := condition.SetJoinOn(t.Type, fmt.Sprintf(
 			"left join %s on %s.%s = %s.%s", t.Join, t.Join, t.On[0], t.Table, t.On[1],
 		))
@@ -113,7 +113,7 @@ func pgSql(driver string, t *resolveSearchTag, condition Condition, qValue refle
 func otherSql(driver string, t *resolveSearchTag, condition Condition, qValue reflect.Value, i int) {
 	switch t.Type {
 	case "left":
-		//左关联
+		//左关�?
 		join := condition.SetJoinOn(t.Type, fmt.Sprintf(
 			"left join `%s` on `%s`.`%s` = `%s`.`%s`",
 			t.Join,

@@ -9,13 +9,13 @@ import (
 	vd "github.com/bytedance/go-tagexpr/v2/validator"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"github.com/go-admin-team/go-admin-core/logger"
-	"github.com/go-admin-team/go-admin-core/sdk"
-	"github.com/go-admin-team/go-admin-core/sdk/pkg"
-	"github.com/go-admin-team/go-admin-core/sdk/pkg/response"
-	"github.com/go-admin-team/go-admin-core/sdk/service"
-	"github.com/go-admin-team/go-admin-core/storage"
-	"github.com/go-admin-team/go-admin-core/tools/language"
+	"github.com/jiyuanjie2008/jxt-core/logger"
+	"github.com/jiyuanjie2008/jxt-core/sdk"
+	"github.com/jiyuanjie2008/jxt-core/sdk/pkg"
+	"github.com/jiyuanjie2008/jxt-core/sdk/pkg/response"
+	"github.com/jiyuanjie2008/jxt-core/sdk/service"
+	"github.com/jiyuanjie2008/jxt-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/tools/language"
 	"gorm.io/gorm"
 )
 
@@ -38,7 +38,7 @@ func (e *Api) AddError(err error) {
 	}
 }
 
-// MakeContext 设置http上下文
+// MakeContext 设置http上下�?
 func (e *Api) MakeContext(c *gin.Context) *Api {
 	e.Context = c
 	e.Logger = GetRequestLogger(c)
@@ -85,7 +85,7 @@ func (e *Api) Bind(d interface{}, bindings ...binding.Binding) *Api {
 func (e Api) GetOrm() (*gorm.DB, error) {
 	db, err := pkg.GetOrm(e.Context)
 	if err != nil {
-		e.Logger.Error(http.StatusInternalServerError, err, "数据库连接获取失败")
+		e.Logger.Error(http.StatusInternalServerError, err, "数据库连接获取失�?)
 		return nil, err
 	}
 	return db, nil
@@ -101,7 +101,7 @@ func (e *Api) MakeOrm() *Api {
 	}
 	db, err := pkg.GetOrm(e.Context)
 	if err != nil {
-		e.Logger.Error(http.StatusInternalServerError, err, "数据库连接获取失败")
+		e.Logger.Error(http.StatusInternalServerError, err, "数据库连接获取失�?)
 		e.AddError(err)
 	}
 	e.Orm = db

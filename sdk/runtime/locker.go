@@ -3,10 +3,10 @@ package runtime
 import (
 	"github.com/bsm/redislock"
 
-	"github.com/go-admin-team/go-admin-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/storage"
 )
 
-// NewLocker 创建对应上下文分布式锁
+// NewLocker 创建对应上下文分布式�?
 func NewLocker(prefix string, locker storage.AdapterLocker) storage.AdapterLocker {
 	return &Locker{
 		prefix: prefix,

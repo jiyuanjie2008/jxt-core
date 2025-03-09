@@ -25,14 +25,14 @@ func GetExt(fileName string) string {
 	return path.Ext(fileName)
 }
 
-// CheckExist 检查文件是否存在
+// CheckExist 检查文件是否存�?
 func CheckExist(src string) bool {
 	_, err := os.Stat(src)
 
 	return os.IsNotExist(err)
 }
 
-// CheckPermission 检查文件权限
+// CheckPermission 检查文件权�?
 func CheckPermission(src string) bool {
 	_, err := os.Stat(src)
 
@@ -40,7 +40,7 @@ func CheckPermission(src string) bool {
 }
 
 // IsNotExistMkDir 检查文件夹是否存在
-// 如果不存在则新建文件夹
+// 如果不存在则新建文件�?
 func IsNotExistMkDir(src string) error {
 	if exist := !CheckExist(src); exist == false {
 		if err := MkDir(src); err != nil {
@@ -51,7 +51,7 @@ func IsNotExistMkDir(src string) error {
 	return nil
 }
 
-// MkDir 新建文件夹
+// MkDir 新建文件�?
 func MkDir(src string) error {
 	err := os.MkdirAll(src, os.ModePerm)
 	if err != nil {

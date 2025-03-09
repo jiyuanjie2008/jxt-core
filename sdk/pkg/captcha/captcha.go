@@ -42,7 +42,7 @@ func DriverDigitFunc() (id, b64s, answer string, err error) {
 	return captcha.Generate()
 }
 
-// Verify 校验验证码
+// Verify 校验验证�?
 func Verify(id, code string, clear bool) bool {
 	return base64Captcha.DefaultMemStore.Verify(id, code, clear)
 }

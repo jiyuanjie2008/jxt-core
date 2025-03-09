@@ -6,9 +6,9 @@ import (
 	"sync"
 
 	"github.com/casbin/casbin/v2"
-	"github.com/go-admin-team/go-admin-core/logger"
-	"github.com/go-admin-team/go-admin-core/storage"
-	"github.com/go-admin-team/go-admin-core/storage/queue"
+	"github.com/jiyuanjie2008/jxt-core/logger"
+	"github.com/jiyuanjie2008/jxt-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/storage/queue"
 	"github.com/robfig/cron/v3"
 	"gorm.io/gorm"
 )
@@ -29,7 +29,7 @@ type Application struct {
 	configs       map[string]map[string]interface{} // 系统参数
 	appRouters    []func()                          // app路由
 	casbinExclude map[string]interface{}            // casbin排除
-	before        []func()                          // 启动前执行
+	before        []func()                          // 启动前执�?
 	app           map[string]interface{}            // app
 }
 
@@ -151,12 +151,12 @@ func (e *Application) GetEngine() http.Handler {
 	return e.engine
 }
 
-// GetRouter 获取路由表
+// GetRouter 获取路由�?
 func (e *Application) GetRouter() []Router {
 	return e.setRouter()
 }
 
-// setRouter 设置路由表
+// setRouter 设置路由�?
 func (e *Application) setRouter() []Router {
 	switch e.engine.(type) {
 	case *gin.Engine:
@@ -178,7 +178,7 @@ func (e *Application) GetLogger() logger.Logger {
 	return logger.DefaultLogger
 }
 
-// NewConfig 默认值
+// NewConfig 默认�?
 func NewConfig() *Application {
 	return &Application{
 		dbs:           make(map[string]*gorm.DB),
@@ -217,7 +217,7 @@ func (e *Application) GetCrontabKey(key string) *cron.Cron {
 	return e.crontab[key]
 }
 
-// SetMiddleware 设置中间件
+// SetMiddleware 设置中间�?
 func (e *Application) SetMiddleware(key string, middleware interface{}) {
 	e.mux.Lock()
 	defer e.mux.Unlock()
@@ -251,12 +251,12 @@ func (e *Application) GetCachePrefix(key string) storage.AdapterCache {
 	return NewCache(key, e.cache, "")
 }
 
-// SetQueueAdapter 设置队列适配器
+// SetQueueAdapter 设置队列适配�?
 func (e *Application) SetQueueAdapter(c storage.AdapterQueue) {
 	e.queue = c
 }
 
-// GetQueueAdapter 获取队列适配器
+// GetQueueAdapter 获取队列适配�?
 func (e *Application) GetQueueAdapter() storage.AdapterQueue {
 	return NewQueue("", e.queue)
 }
@@ -342,12 +342,12 @@ func (e *Application) GetConfigByTenant(tenant string) interface{} {
 	return e.configs[tenant]
 }
 
-// SetAppRouters 设置app的路由
+// SetAppRouters 设置app的路�?
 func (e *Application) SetAppRouters(appRouters func()) {
 	e.appRouters = append(e.appRouters, appRouters)
 }
 
-// GetAppRouters 获取app的路由
+// GetAppRouters 获取app的路�?
 func (e *Application) GetAppRouters() []func() {
 	return e.appRouters
 }

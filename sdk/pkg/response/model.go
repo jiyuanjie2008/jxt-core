@@ -1,7 +1,7 @@
 package response
 
 type Response struct {
-	// 数据集
+	// 数据�?
 	RequestId string `protobuf:"bytes,1,opt,name=requestId,proto3" json:"requestId,omitempty"`
 	Code      int32  `protobuf:"varint,2,opt,name=code,proto3" json:"code,omitempty"`
 	Msg       string `protobuf:"bytes,3,opt,name=msg,proto3" json:"msg,omitempty"`

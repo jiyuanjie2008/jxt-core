@@ -26,8 +26,8 @@ func CompareHashAndPassword(e string, p string) (bool, error) {
 }
 
 // Assert 条件断言
-// 当断言条件为 假 时触发 panic
-// 对于当前请求不会再执行接下来的代码，并且返回指定格式的错误信息和错误码
+// 当断言条件�?�?时触�?panic
+// 对于当前请求不会再执行接下来的代码，并且返回指定格式的错误信息和错误�?
 func Assert(condition bool, msg string, code ...int) {
 	if !condition {
 		statusCode := 200
@@ -39,9 +39,9 @@ func Assert(condition bool, msg string, code ...int) {
 }
 
 // HasError 错误断言
-// 当 error 不为 nil 时触发 panic
-// 对于当前请求不会再执行接下来的代码，并且返回指定格式的错误信息和错误码
-// 若 msg 为空，则默认为 error 中的内容
+// �?error 不为 nil 时触�?panic
+// 对于当前请求不会再执行接下来的代码，并且返回指定格式的错误信息和错误�?
+// �?msg 为空，则默认�?error 中的内容
 func HasError(err error, msg string, code ...int) {
 	if err != nil {
 		statusCode := 200

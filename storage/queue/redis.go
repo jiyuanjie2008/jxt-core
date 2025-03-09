@@ -1,7 +1,7 @@
 package queue
 
 import (
-	"github.com/go-admin-team/go-admin-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/storage"
 	"github.com/go-admin-team/redisqueue/v2"
 	"github.com/redis/go-redis/v9"
 )

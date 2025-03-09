@@ -16,7 +16,7 @@ const timeFormat = "2006-01-02"
 
 const MB = 1024 * 1024
 
-// FileWriter 文件写入结构体
+// FileWriter 文件写入结构�?
 type FileWriter struct {
 	file         *os.File
 	FilenameFunc func(*FileWriter) string
@@ -25,7 +25,7 @@ type FileWriter struct {
 	input        chan []byte
 }
 
-// NewFileWriter 实例化FileWriter, 支持大文件分割
+// NewFileWriter 实例化FileWriter, 支持大文件分�?
 func NewFileWriter(opts ...Option) (*FileWriter, error) {
 	p := &FileWriter{
 		opts: setDefault(),
@@ -44,7 +44,7 @@ func NewFileWriter(opts ...Option) (*FileWriter, error) {
 					p.num--
 					filename = p.getFilename()
 				}
-				//文件不存在
+				//文件不存�?
 				break
 			}
 			//存在，但是报错了
@@ -81,7 +81,7 @@ func (p *FileWriter) checkFile() {
 	info, _ := p.file.Stat()
 	if strings.Index(p.file.Name(), time.Now().Format(timeFormat)) < 0 ||
 		(p.opts.cap > 0 && uint(info.Size()) > p.opts.cap*MB) {
-		//生成新文件
+		//生成新文�?
 		if uint(info.Size()) > p.opts.cap*MB {
 			p.num++
 		} else {
@@ -136,8 +136,8 @@ func (p *FileWriter) Write(data []byte) (n int, err error) {
 	return n, nil
 }
 
-// getFilename 获取log文件名
-// 目前为：以日期格式命名，eg：2006-01-02.log or 2006-01-02.log
+// getFilename 获取log文件�?
+// 目前为：以日期格式命名，eg�?006-01-02.log or 2006-01-02.log
 func (p *FileWriter) getFilename() string {
 	if p.FilenameFunc != nil {
 		return p.FilenameFunc(p)

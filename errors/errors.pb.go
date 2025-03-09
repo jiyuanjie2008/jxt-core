@@ -31,7 +31,7 @@ type Error struct {
 	ErrorCode string `protobuf:"bytes,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
 	// ErrorMessage message display to user
 	ErrorMessage string `protobuf:"bytes,3,opt,name=errorMessage,proto3" json:"errorMessage,omitempty"`
-	// ShowType error display typeï¼š 0 silent; 1 message.warn; 2 message.error; 4 notification; 9 page
+	// ShowType error display typeï¼?0 silent; 1 message.warn; 2 message.error; 4 notification; 9 page
 	ShowType string `protobuf:"bytes,4,opt,name=showType,proto3" json:"showType,omitempty"`
 	// TraceId Convenient for back-end Troubleshooting: unique request ID
 	TraceId string `protobuf:"bytes,5,opt,name=traceId,proto3" json:"traceId,omitempty"`

@@ -20,10 +20,10 @@ func GetImage(src string) (m image.Image, err error) {
 	return
 }
 
-// getResourceReader 读取图片 支持本地和网络图片
+// getResourceReader 读取图片 支持本地和网络图�?
 func getResourceReader(src string) (r *bytes.Reader, err error) {
 	if len(src) < 5 {
-		return nil, errors.New("图片源错误")
+		return nil, errors.New("图片源错�?)
 	}
 
 	//跳过证书验证

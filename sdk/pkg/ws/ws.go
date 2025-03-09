@@ -11,10 +11,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 
-	"github.com/go-admin-team/go-admin-core/sdk/pkg"
+	"github.com/jiyuanjie2008/jxt-core/sdk/pkg"
 )
 
-// Manager 所有 websocket 信息
+// Manager 所�?websocket 信息
 type Manager struct {
 	Group                   map[string]map[string]*Client
 	groupCount, clientCount uint
@@ -34,25 +34,25 @@ type Client struct {
 	Message    chan []byte
 }
 
-// messageData 单个发送数据信息
+// messageData 单个发送数据信�?
 type MessageData struct {
 	Id, Group string
 	Context   context.Context
 	Message   []byte
 }
 
-// groupMessageData 组广播数据信息
+// groupMessageData 组广播数据信�?
 type GroupMessageData struct {
 	Group   string
 	Message []byte
 }
 
-// 广播发送数据信息
+// 广播发送数据信�?
 type BroadCastMessageData struct {
 	Message []byte
 }
 
-// 读信息，从 websocket 连接直接读取数据
+// 读信息，�?websocket 连接直接读取数据
 func (c *Client) Read(cxt context.Context) {
 	defer func(cxt context.Context) {
 		WebsocketManager.UnRegister <- c
@@ -75,7 +75,7 @@ func (c *Client) Read(cxt context.Context) {
 	}
 }
 
-// 写信息，从 channel 变量 Send 中读取数据写入 websocket 连接
+// 写信息，�?channel 变量 Send 中读取数据写�?websocket 连接
 func (c *Client) Write(cxt context.Context) {
 	defer func(cxt context.Context) {
 		log.Printf("client [%s] disconnect", c.Id)
@@ -105,7 +105,7 @@ func (c *Client) Write(cxt context.Context) {
 	}
 }
 
-// 启动 websocket 管理器
+// 启动 websocket 管理�?
 func (manager *Manager) Start() {
 	log.Printf("websocket manage start")
 	for {
@@ -143,7 +143,7 @@ func (manager *Manager) Start() {
 			}
 			manager.Lock.Unlock()
 
-			// 发送广播数据到某个组的 channel 变量 Send 中
+			// 发送广播数据到某个组的 channel 变量 Send �?
 			//case data := <-manager.boardCast:
 			//	if groupMap, ok := manager.wsGroup[data.GroupId]; ok {
 			//		for _, conn := range groupMap {
@@ -154,7 +154,7 @@ func (manager *Manager) Start() {
 	}
 }
 
-// 处理单个 client 发送数据
+// 处理单个 client 发送数�?
 func (manager *Manager) SendService() {
 	for {
 		select {
@@ -172,7 +172,7 @@ func (manager *Manager) SendService() {
 func (manager *Manager) SendGroupService() {
 	for {
 		select {
-		// 发送广播数据到某个组的 channel 变量 Send 中
+		// 发送广播数据到某个组的 channel 变量 Send �?
 		case data := <-manager.GroupMessage:
 			if groupMap, ok := manager.Group[data.Group]; ok {
 				for _, conn := range groupMap {
@@ -197,7 +197,7 @@ func (manager *Manager) SendAllService() {
 	}
 }
 
-// 向指定的 client 发送数据
+// 向指定的 client 发送数�?
 func (manager *Manager) Send(cxt context.Context, id string, group string, message []byte) {
 	data := &MessageData{
 		Id:      id,
@@ -235,7 +235,7 @@ func (manager *Manager) UnRegisterClient(client *Client) {
 	manager.UnRegister <- client
 }
 
-// 当前组个数
+// 当前组个�?
 func (manager *Manager) LenGroup() uint {
 	return manager.groupCount
 }
@@ -245,7 +245,7 @@ func (manager *Manager) LenClient() uint {
 	return manager.clientCount
 }
 
-// 获取 wsManager 管理器信息
+// 获取 wsManager 管理器信�?
 func (manager *Manager) Info() map[string]interface{} {
 	managerInfo := make(map[string]interface{})
 	managerInfo["groupLen"] = manager.LenGroup()
@@ -258,7 +258,7 @@ func (manager *Manager) Info() map[string]interface{} {
 	return managerInfo
 }
 
-// 初始化 wsManager 管理器
+// 初始�?wsManager 管理�?
 var WebsocketManager = Manager{
 	Group:            make(map[string]map[string]*Client),
 	Register:         make(chan *Client, 128),

@@ -3,7 +3,7 @@ package antd
 import (
 	"fmt"
 
-	resp "github.com/go-admin-team/go-admin-core/sdk/pkg/response"
+	resp "github.com/jiyuanjie2008/jxt-core/sdk/pkg/response"
 )
 
 const (
@@ -18,7 +18,7 @@ type Response struct {
 	Success      bool   `json:"success,omitempty"`      // if request is success
 	ErrorCode    string `json:"errorCode,omitempty"`    // code for errorType
 	ErrorMessage string `json:"errorMessage,omitempty"` // message display to user
-	ShowType     string `json:"showType,omitempty"`     // error display typeï¼š 0 silent; 1 message.warn; 2 message.error; 4 notification; 9 page
+	ShowType     string `json:"showType,omitempty"`     // error display typeï¼?0 silent; 1 message.warn; 2 message.error; 4 notification; 9 page
 	TraceId      string `json:"traceId,omitempty"`      // Convenient for back-end Troubleshooting: unique request ID
 	Host         string `json:"host,omitempty"`         // onvenient for backend Troubleshooting: host of current access server
 	Status       string `json:"status,omitempty"`

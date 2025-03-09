@@ -5,15 +5,15 @@ import (
 	"fmt"
 	vd "github.com/bytedance/go-tagexpr/v2/validator"
 	"github.com/gin-gonic/gin/binding"
-	"github.com/go-admin-team/go-admin-core/sdk/service"
+	"github.com/jiyuanjie2008/jxt-core/sdk/service"
 	"net/http"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/go-admin-team/go-admin-core/logger"
-	"github.com/go-admin-team/go-admin-core/sdk/api"
-	"github.com/go-admin-team/go-admin-core/sdk/pkg"
-	"github.com/go-admin-team/go-admin-core/sdk/pkg/response/antd"
+	"github.com/jiyuanjie2008/jxt-core/logger"
+	"github.com/jiyuanjie2008/jxt-core/sdk/api"
+	"github.com/jiyuanjie2008/jxt-core/sdk/pkg"
+	"github.com/jiyuanjie2008/jxt-core/sdk/pkg/response/antd"
 	"gorm.io/gorm"
 )
 
@@ -33,14 +33,14 @@ func (e Api) GetLogger() *logger.Helper {
 func (e *Api) GetOrm(c *gin.Context) (*gorm.DB, error) {
 	db, err := pkg.GetOrm(c)
 	if err != nil {
-		e.Error(http.StatusInternalServerError, "数据库连接获取失败", "9")
+		e.Error(http.StatusInternalServerError, "数据库连接获取失�?, "9")
 		return nil, err
 	}
 	return db, nil
 }
 
 // Error 通常错误数据处理
-// showType error display type： 0 silent; 1 message.warn; 2 message.error; 4 notification; 9 page
+// showType error display type�?0 silent; 1 message.warn; 2 message.error; 4 notification; 9 page
 func (e *Api) Error(errCode int, errMsg string, showType string) {
 	if showType == "" {
 		showType = "2"
@@ -67,7 +67,7 @@ func (e *Api) Custom(data gin.H) {
 	antd.Custum(e.Context, data)
 }
 
-// MakeContext 设置http上下文
+// MakeContext 设置http上下�?
 func (e *Api) MakeContext(c *gin.Context) *Api {
 	e.Context = c
 	e.Logger = api.GetRequestLogger(c)
@@ -112,7 +112,7 @@ func (e *Api) MakeOrm() *Api {
 	}
 	db, err := pkg.GetOrm(e.Context)
 	if err != nil {
-		e.Logger.Error(http.StatusInternalServerError, err, "数据库连接获取失败")
+		e.Logger.Error(http.StatusInternalServerError, err, "数据库连接获取失�?)
 		e.AddError(err)
 	}
 	e.Orm = db

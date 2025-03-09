@@ -6,14 +6,14 @@ import (
 
 	"github.com/chanxuehong/wechat/oauth2"
 
-	"github.com/go-admin-team/go-admin-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/storage"
 )
 
 const (
 	intervalTenant = ""
 )
 
-// NewCache 创建对应上下文缓存
+// NewCache 创建对应上下文缓�?
 func NewCache(prefix string, store storage.AdapterCache, wxTokenStoreKey string) storage.AdapterCache {
 	if wxTokenStoreKey == "" {
 		wxTokenStoreKey = "wx_token_store_key"
@@ -44,7 +44,7 @@ func (e *Cache) SetPrefix(prefix string) {
 	e.prefix = prefix
 }
 
-// Connect 初始化
+// Connect 初始�?
 func (e Cache) Connect() error {
 	return nil
 	//return e.store.Connect()

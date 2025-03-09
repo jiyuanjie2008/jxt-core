@@ -12,8 +12,8 @@ import (
 	"net"
 	"net/http"
 
-	log "github.com/go-admin-team/go-admin-core/logger"
-	"github.com/go-admin-team/go-admin-core/server"
+	log "github.com/jiyuanjie2008/jxt-core/logger"
+	"github.com/jiyuanjie2008/jxt-core/server"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
@@ -25,7 +25,7 @@ type Server struct {
 	started bool
 }
 
-// New 实例化
+// New 实例�?
 func New(name string, opts ...Option) server.Runnable {
 	s := &Server{
 		name: name,
@@ -49,7 +49,7 @@ func NewMetrics(opts ...Option) server.Runnable {
 	return s
 }
 
-// NewHealthz 默认健康检查服务
+// NewHealthz 默认健康检查服�?
 func NewHealthz(opts ...Option) server.Runnable {
 	s := &Server{
 		name: "healthz",
@@ -91,7 +91,7 @@ func (e *Server) String() string {
 	return e.name
 }
 
-// Start 开始
+// Start 开�?
 func (e *Server) Start(ctx context.Context) error {
 	l, err := net.Listen("tcp", e.opts.addr)
 	if err != nil {

@@ -5,10 +5,10 @@ type (
 )
 
 const (
-	ModeDev  Mode = "dev"     //开发模式
+	ModeDev  Mode = "dev"     //开发模�?
 	ModeTest Mode = "test"    //测试模式
 	ModeProd Mode = "prod"    //生产模式
-	Mysql         = "mysql"   //mysql数据库标识
+	Mysql         = "mysql"   //mysql数据库标�?
 	Sqlite        = "sqlite3" //sqlite
 )
 

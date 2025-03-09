@@ -11,12 +11,12 @@ import (
 
 var _redis *redis.Client
 
-// GetRedisClient 获取redis客户端
+// GetRedisClient 获取redis客户�?
 func GetRedisClient() *redis.Client {
 	return _redis
 }
 
-// SetRedisClient 设置redis客户端
+// SetRedisClient 设置redis客户�?
 func SetRedisClient(c *redis.Client) {
 	if _redis != nil && _redis != c {
 		_redis.Shutdown(context.TODO())
@@ -64,7 +64,7 @@ func getTLS(c *Tls) (*tls.Config, error) {
 			fmt.Printf("tls.LoadX509KeyPair err: %v\n", err)
 			return nil, err
 		}
-		// 创建一个新的、空的 CertPool，并尝试解析 PEM 编码的证书，解析成功会将其加到 CertPool 中
+		// 创建一个新的、空�?CertPool，并尝试解析 PEM 编码的证书，解析成功会将其加�?CertPool �?
 		certPool := x509.NewCertPool()
 		ca, err := ioutil.ReadFile(c.Ca)
 		if err != nil {
@@ -81,7 +81,7 @@ func getTLS(c *Tls) (*tls.Config, error) {
 			Certificates: []tls.Certificate{cert},
 			// 要求必须校验客户端的证书
 			ClientAuth: tls.RequireAndVerifyClientCert,
-			// 设置根证书的集合，校验方式使用 ClientAuth 中设定的模式
+			// 设置根证书的集合，校验方式使�?ClientAuth 中设定的模式
 			ClientCAs: certPool,
 		}, nil
 	}

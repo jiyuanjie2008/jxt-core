@@ -3,8 +3,8 @@ package service
 import (
 	"fmt"
 
-	"github.com/go-admin-team/go-admin-core/logger"
-	"github.com/go-admin-team/go-admin-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/logger"
+	"github.com/jiyuanjie2008/jxt-core/storage"
 	"gorm.io/gorm"
 )
 

@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// api结构体
+// api结构�?
 type APIException struct {
 	Code      int         `json:"code"`
 	Success   bool        `json:"success"`

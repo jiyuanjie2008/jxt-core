@@ -5,14 +5,14 @@ import (
 	"net/http"
 
 	"github.com/casbin/casbin/v2"
-	"github.com/go-admin-team/go-admin-core/logger"
-	"github.com/go-admin-team/go-admin-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/logger"
+	"github.com/jiyuanjie2008/jxt-core/storage"
 	"github.com/robfig/cron/v3"
 	"gorm.io/gorm"
 )
 
 type Runtime interface {
-	// SetDb 多db设置，⚠️SetDbs不允许并发,可以根据自己的业务，例如app分库、host分库
+	// SetDb 多db设置，⚠️SetDbs不允许并�?可以根据自己的业务，例如app分库、host分库
 	SetDb(key string, db *gorm.DB)
 	GetDb() map[string]*gorm.DB
 	GetDbByKey(key string) *gorm.DB
@@ -32,7 +32,7 @@ type Runtime interface {
 	GetCasbin() map[string]*casbin.SyncedEnforcer
 	GetCasbinKey(key string) *casbin.SyncedEnforcer
 
-	// SetEngine 使用的路由
+	// SetEngine 使用的路�?
 	SetEngine(engine http.Handler)
 	GetEngine() http.Handler
 

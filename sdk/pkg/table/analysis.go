@@ -8,26 +8,26 @@ import (
 	"gorm.io/gorm"
 )
 
-// Crc32Hash 用于32张分表
+// Crc32Hash 用于32张分�?
 func Crc32Hash(src string) string {
 	sum := crc32.ChecksumIEEE([]byte(src)) % 32
 	return strconv.Itoa(int(sum))
 }
 
-// Crc16Hash 用于16张分表
+// Crc16Hash 用于16张分�?
 func Crc16Hash(src string) string {
 	sum := crc32.ChecksumIEEE([]byte(src)) % 16
 	return strconv.Itoa(int(sum))
 }
 
-// Crc8Hash 用于8张分表
+// Crc8Hash 用于8张分�?
 func Crc8Hash(src string) string {
 	sum := crc32.ChecksumIEEE([]byte(src)) % 8
 	return strconv.Itoa(int(sum))
 }
 
-// DynamicTable 动态表名
-// e.g. DB.Scopes(DynamicTable(Crc32Hash, "test", "小圈圈")).Find(&tests)
+// DynamicTable 动态表�?
+// e.g. DB.Scopes(DynamicTable(Crc32Hash, "test", "小圈�?)).Find(&tests)
 // 设置动态表名scope params: f 分表计算函数 baseTable 基础表名 fieldValue 参与分表字段
 func DynamicTable(f func(string) string, baseTable, fieldValue string) func(db *gorm.DB) *gorm.DB {
 	return func(db *gorm.DB) *gorm.DB {

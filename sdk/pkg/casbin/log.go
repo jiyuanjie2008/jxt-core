@@ -1,7 +1,7 @@
 package mycasbin
 
 import (
-	"github.com/go-admin-team/go-admin-core/logger"
+	"github.com/jiyuanjie2008/jxt-core/logger"
 	"log/slog"
 	"sync/atomic"
 )

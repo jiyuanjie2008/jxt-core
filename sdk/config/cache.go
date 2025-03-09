@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/go-admin-team/go-admin-core/storage"
-	"github.com/go-admin-team/go-admin-core/storage/cache"
+	"github.com/jiyuanjie2008/jxt-core/storage"
+	"github.com/jiyuanjie2008/jxt-core/storage/cache"
 )
 
 type Cache struct {

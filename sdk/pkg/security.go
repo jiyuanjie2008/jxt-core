@@ -55,7 +55,7 @@ func GenerateRandomKey6() string {
 	return generateRandString(6, letter)
 }
 
-// SetPassword 根据明文密码和加盐值生成密码
+// SetPassword 根据明文密码和加盐值生成密�?
 func SetPassword(password string, salt string) (verify string, err error) {
 	var rb []byte
 	rb, err = scrypt.Key([]byte(password), []byte(salt), 16384, 8, 1, 32)

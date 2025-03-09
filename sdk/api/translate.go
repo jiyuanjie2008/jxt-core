@@ -19,7 +19,7 @@ import (
 	chTranslations "github.com/go-playground/validator/v10/translations/zh"
 )
 
-// transInit local 通常取决于 http 请求头的 'Accept-Language'
+// transInit local 通常取决�?http 请求头的 'Accept-Language'
 func transInit(local string) (trans ut.Translator, err error) {
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
 		zhT := zh.New() //chinese
@@ -28,7 +28,7 @@ func transInit(local string) (trans ut.Translator, err error) {
 
 		var o bool
 		//register translate
-		// 注册翻译器
+		// 注册翻译�?
 		switch local {
 		case "zh", "zh-CN":
 			trans, o = uni.GetTranslator("zh")

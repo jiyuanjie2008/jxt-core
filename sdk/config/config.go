@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/go-admin-team/go-admin-core/config"
-	"github.com/go-admin-team/go-admin-core/config/source"
+	"github.com/jiyuanjie2008/jxt-core/config"
+	"github.com/jiyuanjie2008/jxt-core/config/source"
 )
 
 var (
@@ -13,7 +13,7 @@ var (
 	_cfg         *Settings
 )
 
-// Settings 兼容原先的配置结构
+// Settings 兼容原先的配置结�?
 type Settings struct {
 	Settings  Config `yaml:"settings"`
 	callbacks []func()
@@ -56,7 +56,7 @@ type Config struct {
 	Extend      interface{}           `yaml:"extend"`
 }
 
-// 多db改造
+// 多db改�?
 func (e *Config) multiDatabase() {
 	if len(*e.Databases) == 0 {
 		*e.Databases = map[string]*Database{
