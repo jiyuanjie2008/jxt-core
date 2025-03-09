@@ -10,4 +10,4 @@ require (
 require go.uber.org/multierr v1.10.0 // indirect  
 
 // 开发时使用，发布前可以注释掉  
-replace github.com/jiyuanjie2008/jxt-core => ../../../  
+//replace github.com/jiyuanjie2008/jxt-core => ../../../  

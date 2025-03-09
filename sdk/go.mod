@@ -134,7 +134,7 @@ require (
 )  
 
 // 开发时使用，发布前可以注释掉  
-replace github.com/jiyuanjie2008/jxt-core => ../  
+//replace github.com/jiyuanjie2008/jxt-core => ../  
 
-// 引用本地 zap 模块，确保与主模块版本兼容  
-replace github.com/jiyuanjie2008/jxt-core/plugins/logger/zap => ../plugins/logger/zap  
+// 引用本地 zap 模块，确保与主模块版本兼容，开发时使用，发布前可以注释掉 
+//replace github.com/jiyuanjie2008/jxt-core/plugins/logger/zap => ../plugins/logger/zap  
