@@ -30,7 +30,7 @@ type Server struct {
 	opts                   options
 }
 
-// New 实例�?
+// New 实例化
 func New(opts ...Option) Manager {
 	s := &Server{
 		services:               make(map[string]Runnable),
@@ -75,11 +75,11 @@ func (e *Server) Start(ctx context.Context) (err error) {
 
 	for k := range e.services {
 		if !e.services[k].Attempt() {
-			//先判断是否可以启�?
+			//先判断是否可以启�?
 			return errors.New("can't accept new runnable as stop procedure is already engaged")
 		}
 	}
-	//按顺序启�?
+	//按顺序启�?
 	for k := range e.services {
 		e.startRunnable(e.services[k])
 	}

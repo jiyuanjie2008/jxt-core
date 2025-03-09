@@ -39,7 +39,7 @@ type Entity interface {
 	OnChange()
 }
 
-// Options 配置的参�?
+// Options 配置的参数
 type Options struct {
 	Loader loader.Loader
 	Reader reader.Reader

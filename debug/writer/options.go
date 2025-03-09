@@ -7,10 +7,10 @@
 
 package writer
 
-// Options 可配置参�?
+// Options 可配置参数
 type Options struct {
 	path       string //文件路径
-	suffix     string //文件扩展�?
+	suffix     string //文件扩展�?
 	daysToKeep uint   //保存天数
 	cap        uint   //文件大小
 }
@@ -33,7 +33,7 @@ func WithPath(s string) Option {
 	}
 }
 
-// WithSuffix 设置文件扩展�?
+// WithSuffix 设置文件扩展�?
 func WithSuffix(s string) Option {
 	return func(o *Options) {
 		o.suffix = s

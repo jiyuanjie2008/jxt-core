@@ -33,7 +33,7 @@ type NSQ struct {
 	channelPrefix string
 }
 
-// String 字符串类�?
+// String 字符串类型
 func (NSQ) String() string {
 	return "nsq"
 }
@@ -70,7 +70,7 @@ func (e *NSQ) newConsumer(topic string, h nsq.Handler) (err error) {
 	return err
 }
 
-// Append 消息入生产�?
+// Append 消息入生产�?
 func (e *NSQ) Append(message storage.Messager) error {
 	rb, err := json.Marshal(message.GetValues())
 	if err != nil {
@@ -79,12 +79,12 @@ func (e *NSQ) Append(message storage.Messager) error {
 	return e.producer.Publish(message.GetStream(), rb)
 }
 
-// Register 监听消费�?
+// Register 监听消费�?
 func (e *NSQ) Register(name string, f storage.ConsumerFunc) {
 	h := &nsqConsumerHandler{f}
 	err := e.newConsumer(name, h)
 	if err != nil {
-		//目前不支持动态注�?
+		//目前不支持动态注�?
 		panic(err)
 	}
 }
