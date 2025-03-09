@@ -3,7 +3,7 @@ module github.com/jiyuanjie2008/jxt-core/plugins/logger/logrus
 go 1.21  
 
 require (  
-	github.com/jiyuanjie2008/jxt-core v1.0.0  
+	github.com/jiyuanjie2008/jxt-core v1.5.5  
 	github.com/sirupsen/logrus v1.9.3  
 )  
 
