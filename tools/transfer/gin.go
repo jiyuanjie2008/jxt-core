@@ -24,7 +24,7 @@ func main() {
 }
 **/
 
-// Handler http.Handler 转换�?gin.HandlerFunc
+// Handler http.Handler 转换  gin.HandlerFunc
 func Handler(handler http.Handler) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		handler.ServeHTTP(c.Writer, c.Request)
